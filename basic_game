@@ -1,0 +1,37 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int i=5,f=0,answer;
+      double x=Math.random()*100;
+      System.out.println("Guess a number between 1 to 100");
+      System.out.println("You will get 5 chances in total\n Lets get started!!!");
+      while(i>0)
+      {
+          answer =sc.nextInt();
+          if(answer==(int)x)
+          {
+              System.out.println("You WIN!!");
+               System.out.println("The number is"+(int)x);
+               f=1;break;
+          }
+          else if(answer>(int)x)
+          {
+               System.out.println("The actual number is less than the number you guessed");
+                System.out.println("You have "+(i-1)+"chances left");
+                i--;
+          }
+          else
+          {
+               System.out.println("The actual number is greater than the number you guessed");
+               System.out.println("You have "+(i-1)+"chances left");
+               i--;
+          }
+          
+      }
+      if(f==0)
+      {System.out.println("You Lose!");
+      System.out.println("The number is "+(int)x);
+      }
+    }
+}
